@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniSite</title>
+  <meta name="description" content="Anilist.co clone exploration in React.js">
+  <link rel="icon" href="/files/settings/bv09oamt7o9y99q/profile_picture_blk21bn5w8.png">
+  <meta property="og:title" content="AniSite">
+  <meta property="og:description" content="Anilist.co clone exploration in React.js">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="/files/projects/cxp2jtckj0oqe0d/anisite_j98ci73o3q.png">
+  <meta property="og:url" content="https://portfolio-static.grimbert.net">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AniSite">
+  <meta name="twitter:description" content="Anilist.co clone exploration in React.js">
+  <meta name="twitter:image" content="/files/projects/cxp2jtckj0oqe0d/anisite_j98ci73o3q.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>:root {
+  --color-accent: oklch(0.602 0.134 21.9);
+  --color-accent-hover: oklch(0.532 0.154 21.9);
+  --color-accent-subtle: oklch(0.930 0.033 21.9);
+}
+.dark {
+  --color-accent: oklch(0.702 0.134 21.9);
+  --color-accent-hover: oklch(0.762 0.114 21.9);
+  --color-accent-subtle: oklch(0.250 0.040 21.9);
+}</style>
+  <script>
+    (function() {
+      var theme = localStorage.getItem("theme") || "system";
+      if (theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="font-sans antialiased bg-surface text-text min-h-screen">
+  
+    <div class="min-h-screen flex flex-col">
+      
+    <header class="sticky top-0 z-40 border-b border-border bg-surface/80 backdrop-blur-md">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="/en" class="text-lg font-semibold tracking-tight hover:text-accent transition-colors">Arnaud GRIMBERT</a>
+
+          <nav class="hidden md:flex items-center gap-1">
+            <a href="/en" class="px-3 py-2 rounded-lg text-sm text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Home</a>
+            <a href="/en/projects" class="px-3 py-2 rounded-lg text-sm text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Projects</a>
+            <a href="/en/miage-works" class="px-3 py-2 rounded-lg text-sm text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Works</a><a href="/en/miage-cours" class="px-3 py-2 rounded-lg text-sm text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Cours</a>
+            
+    <div class="relative inline-block text-left" data-dropdown>
+      <div class="cursor-pointer" data-dropdown-trigger><button class="px-3 py-2 rounded-lg text-sm text-text-muted hover:text-text hover:bg-surface-alt transition-colors">More <span class="text-xs opacity-50">&#9660;</span></button></div>
+      <div class="absolute min-w-[10rem] bg-surface border border-border rounded-xl shadow-xl z-50 overflow-hidden hidden right-0 top-full mt-2" data-dropdown-menu>
+        <div class="flex flex-col">
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" onclick="window.location.href='/en/miage-defense'" >
+      
+      <span class="flex-1 truncate">Defense</span>
+      
+    </button></div>
+      </div>
+    </div>
+          </nav>
+
+          <div class="flex items-center gap-2">
+            <div class="hidden md:flex items-center gap-2">
+              
+    <div class="relative inline-block text-left" data-dropdown>
+      <div class="cursor-pointer" data-dropdown-trigger>
+    <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-surface-alt transition-colors border border-transparent hover:border-border h-10" title="Change language">
+      <span class="flex items-center justify-center text-lg leading-none"><span class="w-5 h-5 flex items-center justify-center">🇬🇧</span></span>
+      <span class="text-sm font-medium uppercase">en</span>
+      <span class="text-xs opacity-50">&#9660;</span>
+    </button></div>
+      <div class="absolute min-w-[10rem] bg-surface border border-border rounded-xl shadow-xl z-50 overflow-hidden hidden right-0 top-full mt-2" data-dropdown-menu>
+        <div class="flex flex-col">
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors bg-surface-alt/80 text-accent font-semibold" data-lang-switch="en">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-100"><span class="w-5 h-5 flex items-center justify-center">🇬🇧</span></span>
+      <span class="flex-1 truncate">English</span>
+      <span class="text-accent">&#10003;</span>
+    </button>
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" data-lang-switch="fr">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-70"><span class="w-5 h-5 flex items-center justify-center">🇫🇷</span></span>
+      <span class="flex-1 truncate">Français</span>
+      
+    </button></div>
+      </div>
+    </div>
+              
+    <div class="relative inline-block text-left" data-dropdown>
+      <div class="cursor-pointer" data-dropdown-trigger>
+    <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-surface-alt transition-colors border border-transparent hover:border-border h-10" aria-label="Toggle theme" title="Theme">
+      <span class="w-5 flex items-center justify-center text-lg leading-none" data-theme-icon><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z" />
+  <path d="M20.054 15.987H3.946" />
+</svg></span>
+      <span class="text-xs opacity-50">&#9660;</span>
+    </button></div>
+      <div class="absolute min-w-[10rem] bg-surface border border-border rounded-xl shadow-xl z-50 overflow-hidden hidden right-0 top-full mt-2" data-dropdown-menu>
+        <div class="flex flex-col">
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" data-theme-option="light">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-70"><span class="w-5 h-5" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" />
+</svg></span></span>
+      <span class="flex-1 truncate">Light</span>
+      
+    </button>
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" data-theme-option="dark">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-70"><span class="w-5 h-5" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</svg></span></span>
+      <span class="flex-1 truncate">Dark</span>
+      
+    </button>
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" data-theme-option="system">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-70"><span class="w-5 h-5" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z" />
+  <path d="M20.054 15.987H3.946" />
+</svg></span></span>
+      <span class="flex-1 truncate">System</span>
+      
+    </button></div>
+      </div>
+    </div>
+            </div>
+            <button data-sidebar-open class="md:hidden p-2 rounded-lg hover:bg-surface-alt transition-colors" aria-label="Open menu">
+              <span class="w-6 h-6" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 5h16" />
+  <path d="M4 12h16" />
+  <path d="M4 19h16" />
+</svg></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+      <main class="flex-1">
+        <article>
+          <div class="relative w-full aspect-[21/9] max-h-[400px] bg-surface-alt overflow-hidden">
+        <img src="/files/projects/cxp2jtckj0oqe0d/anisite_5kcya0dh9h.png" alt="AniSite" class="object-cover w-full h-full" />
+      </div>
+          <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
+            <a href="/en/projects" class="inline-flex items-center gap-1 text-sm text-text-muted hover:text-accent transition-colors mb-8">&larr; All Projects</a>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-3">AniSite</h1>
+            <p class="text-lg text-text-muted mb-6">Anilist.co clone exploration in React.js</p>
+            
+    <div class="flex flex-wrap gap-3 mb-8">
+      <a href="https://anisite.grimbert.net" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-white font-medium hover:bg-accent-hover transition-colors">Live Demo</a>
+      
+    </div>
+            <div class="mb-8">
+          <h2 class="text-sm font-medium text-text-muted uppercase tracking-wider mb-3">Technologies</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-alt border border-border text-sm"><span class="w-4 h-4 text-text-muted" style="display:inline-flex"><svg width="100%" height="100%" style="display:block" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211 17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z" fill="#53C1DE"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.7004 11.1537C25.2661 8.92478 25.9772 4.79148 23.4704 3.39016C20.9753 1.99495 17.7284 4.66843 16.0139 6.27318C14.3044 4.68442 10.9663 2.02237 8.46163 3.42814C5.96751 4.82803 6.73664 8.8928 7.3149 11.1357C4.98831 11.7764 1 13.1564 1 15.9759C1 18.7874 4.98416 20.2888 7.29698 20.9289C6.71658 23.1842 5.98596 27.1909 8.48327 28.5877C10.9973 29.9932 14.325 27.3945 16.0554 25.7722C17.7809 27.3864 20.9966 30.0021 23.4922 28.6014C25.9956 27.1963 25.3436 23.1184 24.7653 20.8625C27.0073 20.221 31 18.7523 31 15.9759C31 13.1835 26.9903 11.7923 24.7004 11.1537ZM24.4162 19.667C24.0365 18.5016 23.524 17.2623 22.8971 15.9821C23.4955 14.7321 23.9881 13.5088 24.3572 12.3509C26.0359 12.8228 29.7185 13.9013 29.7185 15.9759C29.7185 18.07 26.1846 19.1587 24.4162 19.667ZM22.85 27.526C20.988 28.571 18.2221 26.0696 16.9478 24.8809C17.7932 23.9844 18.638 22.9422 19.4625 21.7849C20.9129 21.6602 22.283 21.4562 23.5256 21.1777C23.9326 22.7734 24.7202 26.4763 22.85 27.526ZM9.12362 27.5111C7.26143 26.47 8.11258 22.8946 8.53957 21.2333C9.76834 21.4969 11.1286 21.6865 12.5824 21.8008C13.4123 22.9332 14.2816 23.9741 15.1576 24.8857C14.0753 25.9008 10.9945 28.557 9.12362 27.5111ZM2.28149 15.9759C2.28149 13.874 5.94207 12.8033 7.65904 12.3326C8.03451 13.5165 8.52695 14.7544 9.12123 16.0062C8.51925 17.2766 8.01977 18.5341 7.64085 19.732C6.00369 19.2776 2.28149 18.0791 2.28149 15.9759ZM9.1037 4.50354C10.9735 3.45416 13.8747 6.00983 15.1159 7.16013C14.2444 8.06754 13.3831 9.1006 12.5603 10.2265C11.1494 10.3533 9.79875 10.5569 8.55709 10.8297C8.09125 9.02071 7.23592 5.55179 9.1037 4.50354ZM20.3793 11.5771C21.3365 11.6942 22.2536 11.85 23.1147 12.0406C22.8562 12.844 22.534 13.6841 22.1545 14.5453C21.6044 13.5333 21.0139 12.5416 20.3793 11.5771ZM16.0143 8.0481C16.6054 8.66897 17.1974 9.3623 17.7798 10.1145C16.5985 10.0603 15.4153 10.0601 14.234 10.1137C14.8169 9.36848 15.414 8.67618 16.0143 8.0481ZM9.8565 14.5444C9.48329 13.6862 9.16398 12.8424 8.90322 12.0275C9.75918 11.8418 10.672 11.69 11.623 11.5748C10.9866 12.5372 10.3971 13.5285 9.8565 14.5444ZM11.6503 20.4657C10.6679 20.3594 9.74126 20.2153 8.88556 20.0347C9.15044 19.2055 9.47678 18.3435 9.85796 17.4668C10.406 18.4933 11.0045 19.4942 11.6503 20.4657ZM16.0498 23.9915C15.4424 23.356 14.8365 22.6531 14.2448 21.8971C15.4328 21.9423 16.6231 21.9424 17.811 21.891C17.2268 22.6608 16.6369 23.3647 16.0498 23.9915ZM22.1667 17.4222C22.5677 18.3084 22.9057 19.1657 23.1742 19.9809C22.3043 20.1734 21.3652 20.3284 20.3757 20.4435C21.015 19.4607 21.6149 18.4536 22.1667 17.4222ZM18.7473 20.5941C16.9301 20.72 15.1016 20.7186 13.2838 20.6044C12.2509 19.1415 11.3314 17.603 10.5377 16.0058C11.3276 14.4119 12.2404 12.8764 13.2684 11.4158C15.0875 11.2825 16.9178 11.2821 18.7369 11.4166C19.7561 12.8771 20.6675 14.4086 21.4757 15.9881C20.6771 17.5812 19.7595 19.1198 18.7473 20.5941ZM22.8303 4.4666C24.7006 5.51254 23.8681 9.22726 23.4595 10.8426C22.2149 10.5641 20.8633 10.3569 19.4483 10.2281C18.6239 9.09004 17.7698 8.05518 16.9124 7.15949C18.1695 5.98441 20.9781 3.43089 22.8303 4.4666Z" fill="#53C1DE"/>
+</svg></span>React.js</span><span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-alt border border-border text-sm"><span class="w-4 h-4 text-text-muted" style="display:inline-flex"><svg width="100%" height="100%" style="display:block" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet"><path d="M0 0h256v256H0V0z" fill="#F7DF1E"/><path d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574"/></svg></span>JavaScript</span><span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-alt border border-border text-sm"><span class="w-4 h-4 text-text-muted" style="display:inline-flex"><svg width="100%" height="100%" style="display:block" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 108.35 122.88" style="enable-background:new 0 0 108.35 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#E44D26;} .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#F16529;} .st2{fill-rule:evenodd;clip-rule:evenodd;fill:#EBEBEB;} .st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}</style><g><polygon class="st0" points="108.35,0 98.48,110.58 54.11,122.88 9.86,110.6 0,0 108.35,0"/><polygon class="st1" points="54.17,113.48 90.03,103.54 98.46,9.04 54.17,9.04 54.17,113.48"/><path class="st2" d="M34.99,36.17h19.19V22.61H20.16l0.32,3.64l3.33,37.38h30.35V50.06H36.23L34.99,36.17L34.99,36.17L34.99,36.17z M38.04,70.41H24.43l1.9,21.3l27.79,7.71l0.06-0.02V85.29l-0.06,0.02l-15.11-4.08L38.04,70.41L38.04,70.41L38.04,70.41z"/><path class="st3" d="M54.13,63.63h16.7l-1.57,17.59L54.13,85.3v14.11l27.81-7.71l0.2-2.29l3.19-35.71l0.33-3.64H54.13V63.63 L54.13,63.63z M54.13,36.14v0.03h32.76l0.27-3.05l0.62-6.88l0.32-3.64H54.13V36.14L54.13,36.14L54.13,36.14z"/></g></svg></span>HTML/CSS</span>
+          </div>
+        </div>
+            <div class="mb-12"><div class="rich-text">AniSite is a project I created to explore React.js. It is an incomplete attempt to replicate the website Anilist.co.</div></div>
+            
+          </div>
+        </article>
+      </main>
+      
+    <footer class="border-t border-border mt-auto">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex gap-3"><a href="https://github.com/Buco7854" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-text-muted hover:text-accent hover:bg-surface-alt transition-colors" title="Github"><span class="w-5 h-5" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+  <path d="M9 18c-4.51 2-5-2-7-2" />
+</svg></span></a><a href="https://www.linkedin.com/in/arnaud-grimbert-383276259/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-text-muted hover:text-accent hover:bg-surface-alt transition-colors" title="Linkedin"><span class="w-5 h-5" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+  <rect width="4" height="12" x="2" y="9" />
+  <circle cx="4" cy="4" r="2" />
+</svg></span></a></div>
+          <p class="text-sm text-text-muted">&copy; 2026 Arnaud GRIMBERT. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    </div>
+    
+    <div id="sidebar-backdrop" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm md:hidden hidden"></div>
+    <div id="sidebar" class="fixed top-0 right-0 z-50 h-full w-72 bg-surface border-l border-border shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden translate-x-full">
+      <div class="flex flex-col h-full">
+        <div class="flex justify-end p-4">
+          <button data-sidebar-close class="p-2 rounded-lg hover:bg-surface-alt transition-colors" aria-label="Close menu">
+            <span class="w-6 h-6" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</svg></span>
+          </button>
+        </div>
+        <nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+          <a href="/en" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Home</a>
+          <a href="/en/projects" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Projects</a>
+          <div class="pt-4 pb-2"><div class="text-xs font-medium text-text-muted uppercase tracking-wider px-3">Categories</div></div>
+         <a href="/en/miage-works" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Works</a><a href="/en/miage-cours" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Cours</a><a href="/en/miage-defense" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-text-muted hover:text-text hover:bg-surface-alt transition-colors">Defense</a>
+        </nav>
+        <div class="p-4 border-t border-border flex items-center justify-between gap-2">
+          
+    <div class="relative inline-block text-left" data-dropdown>
+      <div class="cursor-pointer" data-dropdown-trigger>
+    <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-surface-alt transition-colors border border-transparent hover:border-border h-10" title="Change language">
+      <span class="flex items-center justify-center text-lg leading-none"><span class="w-5 h-5 flex items-center justify-center">🇬🇧</span></span>
+      <span class="text-sm font-medium uppercase">en</span>
+      <span class="text-xs opacity-50">&#9660;</span>
+    </button></div>
+      <div class="absolute min-w-[10rem] bg-surface border border-border rounded-xl shadow-xl z-50 overflow-hidden hidden right-0 bottom-full mb-2" data-dropdown-menu>
+        <div class="flex flex-col">
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors bg-surface-alt/80 text-accent font-semibold" data-lang-switch="en">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-100"><span class="w-5 h-5 flex items-center justify-center">🇬🇧</span></span>
+      <span class="flex-1 truncate">English</span>
+      <span class="text-accent">&#10003;</span>
+    </button>
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" data-lang-switch="fr">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-70"><span class="w-5 h-5 flex items-center justify-center">🇫🇷</span></span>
+      <span class="flex-1 truncate">Français</span>
+      
+    </button></div>
+      </div>
+    </div>
+          
+    <div class="relative inline-block text-left" data-dropdown>
+      <div class="cursor-pointer" data-dropdown-trigger>
+    <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-surface-alt transition-colors border border-transparent hover:border-border h-10" aria-label="Toggle theme" title="Theme">
+      <span class="w-5 flex items-center justify-center text-lg leading-none" data-theme-icon><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z" />
+  <path d="M20.054 15.987H3.946" />
+</svg></span>
+      <span class="text-xs opacity-50">&#9660;</span>
+    </button></div>
+      <div class="absolute min-w-[10rem] bg-surface border border-border rounded-xl shadow-xl z-50 overflow-hidden hidden right-0 bottom-full mb-2" data-dropdown-menu>
+        <div class="flex flex-col">
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" data-theme-option="light">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-70"><span class="w-5 h-5" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" />
+</svg></span></span>
+      <span class="flex-1 truncate">Light</span>
+      
+    </button>
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" data-theme-option="dark">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-70"><span class="w-5 h-5" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</svg></span></span>
+      <span class="flex-1 truncate">Dark</span>
+      
+    </button>
+    <button class="w-full text-left px-4 py-2.5 text-sm flex items-center gap-3 transition-colors hover:bg-surface-alt text-text" data-theme-option="system">
+      <span class="w-5 flex items-center justify-center text-lg leading-none shrink-0 opacity-70"><span class="w-5 h-5" style="display:inline-flex"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z" />
+  <path d="M20.054 15.987H3.946" />
+</svg></span></span>
+      <span class="flex-1 truncate">System</span>
+      
+    </button></div>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  <script>window._icons={sun:'<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="4" />  <path d="M12 2v2" />  <path d="M12 20v2" />  <path d="m4.93 4.93 1.41 1.41" />  <path d="m17.66 17.66 1.41 1.41" />  <path d="M2 12h2" />  <path d="M20 12h2" />  <path d="m6.34 17.66-1.41 1.41" />  <path d="m19.07 4.93-1.41 1.41" /></svg>',moon:'<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>',laptop:'<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z" />  <path d="M20.054 15.987H3.946" /></svg>'}</script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
