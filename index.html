@@ -1,1 +1,26 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=/en"></head><body></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    (function() {
+      var supported = ["en","fr"];
+      var fallback = "en";
+      
+      // Récupérer la langue du navigateur (ex: "fr-FR" -> "fr")
+      var userLang = (navigator.language || navigator.userLanguage || "").split('-')[0].toLowerCase();
+      
+      // Vérifier si la langue de l'utilisateur fait partie des langues supportées
+      var targetLang = supported.includes(userLang) ? userLang : fallback;
+      
+      // Redirection transparente
+      window.location.replace("/" + targetLang);
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/en">
+  </noscript>
+</head>
+<body></body>
+</html>
